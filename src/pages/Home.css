@@ -1,0 +1,18 @@
+.main{
+    height: 100vh;
+    width: 100%;
+    background: url('https://cutewallpaper.org/28/dedsec-phone-wallpaper-gif/dedsec-2-on-make-a-gif.gif');
+    /* background: url('https://media.tenor.com/FcA59Dz2qf0AAAAd/watch-dogs2-dedsec.gif'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.url-submit-form{
+    height: 30rem;
+    width: 22rem;
+    background: white;
+    margin-left: 5rem;
+    border-radius: 1rem;
+}
