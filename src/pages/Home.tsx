@@ -56,7 +56,7 @@ export default function Home() {
         const shUrl: string = data.single_link;
         const splitStr = shUrl.split("/");
         const urlID = splitStr[splitStr.length - 2];
-        setShortURL(`http://localhost:3000/${urlID}`);
+        setShortURL(`${process.env.REACT_APP_BASE_URL}/${urlID}`);
       } else {
         setShortURL(data.single_link);
       }
