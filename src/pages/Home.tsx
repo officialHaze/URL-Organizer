@@ -1,5 +1,8 @@
 import "./Home.css";
 import { useState, FormEvent, ChangeEvent } from "react";
+import URLSubmitForm from "../components/URLSubmitForm";
+import ShURLReceivedBox from "../components/ShURLReceivedBox";
+import { axiosInstance } from "../lib/axiosConfig";
 
 let counter = 0;
 
@@ -11,6 +14,7 @@ export default function Home() {
       value: "",
     },
   ]);
+  const [shortURL, setShortURL] = useState("");
 
   //handle input change
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -39,23 +43,41 @@ export default function Home() {
     });
   };
 
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    const urlList = urls.map((instance) => {
+      return instance.value;
+    });
+    try {
+      const { data } = await axiosInstance.post("/api/url/organize-url/", {
+        long_urls: urlList,
+      });
+      if (urls.length > 1) {
+        const shUrl: string = data.single_link;
+        const splitStr = shUrl.split("/");
+        const urlID = splitStr[splitStr.length - 2];
+        setShortURL(`http://localhost:3000/${urlID}`);
+      } else {
+        setShortURL(data.single_link);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <main className="main">
-      <form className="url-submit-form">
-        {inputs.map((count) => {
-          return (
-            <div key={count}>
-              <input
-                type="text"
-                id={count.toString()}
-                onChange={handleChange}
-                value={urls[count].value}
-              />
-              <button onClick={addNewInputField}>add</button>
-            </div>
-          );
-        })}
-      </form>
+      {!shortURL ? (
+        <URLSubmitForm
+          submit={handleSubmit}
+          inputs={inputs}
+          handleChange={handleChange}
+          urls={urls}
+          addNewInputField={addNewInputField}
+        />
+      ) : (
+        <ShURLReceivedBox shortUrl={shortURL} />
+      )}
     </main>
   );
 }

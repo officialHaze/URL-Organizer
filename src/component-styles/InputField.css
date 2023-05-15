@@ -1,0 +1,19 @@
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0.5rem;
+}
+
+.input-wrapper > input {
+  border: 1px solid rgba(122, 122, 122, 0.5);
+  padding: 0.5rem 0.85rem;
+  width: 70%;
+  border-radius: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.input-wrapper > input:focus {
+  border: 1px solid #a459d1;
+}

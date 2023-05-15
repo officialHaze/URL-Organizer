@@ -1,0 +1,32 @@
+.short-url-list-container {
+  width: 35rem;
+  height: 40rem;
+  background: #a559d154;
+  color: white;
+  border-radius: 2rem;
+  overflow: auto;
+  backdrop-filter: blur(0.5rem);
+  display: flex;
+  align-items: center;
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.5);
+}
+
+.short-url-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.75rem;
+}
+
+.site-logo {
+  width: 100%;
+  height: 100%;
+}
+
+.site-logo-wrapper {
+  width: 10%;
+  height: 10%;
+}

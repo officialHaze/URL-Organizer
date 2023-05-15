@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,9 +7,31 @@
 body {
   min-height: 100vh;
   background: black;
+  font-family: "Poppins", sans-serif;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+input {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  font-family: "Poppins", sans-serif;
+}
+
+button {
+  background: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
