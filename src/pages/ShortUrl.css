@@ -8,6 +8,7 @@
   backdrop-filter: blur(0.5rem);
   display: flex;
   align-items: center;
+  justify-content: center;
   box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -27,6 +28,9 @@
 }
 
 .site-logo-wrapper {
-  width: 10%;
-  height: 10%;
+  width: 5rem;
+  height: 5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

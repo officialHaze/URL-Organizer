@@ -1,7 +1,8 @@
 /* display flexs' */
 .main,
 .url-submit-form,
-.url-received-container {
+.url-received-container,
+.copy-link-btn-wrapper {
   display: flex;
 }
 
@@ -28,9 +29,12 @@
 }
 
 /* form submit button  */
+.form-submit-btn-wrapper {
+  padding: 2rem;
+}
+
 .form-submit-btn-wrapper,
 .copy-link-btn-wrapper {
-  padding: 1rem;
   text-align: center;
 }
 
@@ -45,4 +49,31 @@
 .form-submit-btn-wrapper > button:hover,
 .copy-link-btn-wrapper > button:hover {
   background: #7a429b;
+}
+
+/* short url received container  */
+.url-received-container {
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.link-ready-logo {
+  width: 8rem;
+  height: 8rem;
+  background: url("/public/assets/hacker.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.copy-link-btn-wrapper {
+  padding: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.copy-link-btn-wrapper > a {
+  color: rgba(122, 122, 122, 0.8);
+  font-size: 0.85rem;
+  text-decoration: underline;
 }

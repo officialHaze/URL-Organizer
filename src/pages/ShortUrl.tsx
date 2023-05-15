@@ -34,13 +34,10 @@ export default function ShortUrl() {
           {urlList?.map((instance, i) => {
             return (
               <div className="short-url-wrapper" key={i}>
-                <div className="site-logo-wrapper">
-                  <img
-                    className="site-logo"
-                    src={instance.logo}
-                    alt="site logo"
-                  />
-                </div>
+                <div
+                  className="site-logo-wrapper"
+                  style={{ backgroundImage: `url('${instance.logo}')` }}
+                />
                 <a href={instance.link}>{instance.link}</a>
               </div>
             );
@@ -50,3 +47,9 @@ export default function ShortUrl() {
     </main>
   );
 }
+
+// <img
+//   className="site-logo"
+//   src={instance.logo}
+//   alt="site logo"
+// />;

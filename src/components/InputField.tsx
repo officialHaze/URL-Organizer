@@ -12,6 +12,7 @@ interface Props {
 export default function InputField(props: Props) {
   return (
     <div className="input-wrapper">
+      <p>Link</p>
       <input
         type="text"
         id={props.count.toString()}
